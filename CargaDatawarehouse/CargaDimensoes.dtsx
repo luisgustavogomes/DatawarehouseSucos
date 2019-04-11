@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CargaDimensoes"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{5A5992A4-2227-4DAF-B06E-43F96376A55A}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{64C0B4BE-3A52-40F6-85B1-17960DD13334}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -85,7 +85,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqR6086GV9ke28XkpleS2ygAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACXZ/1GAC/oGVpPEpjESpiZAAAAAASAAACgAAAAEAAAALA5hLtCoJCyd3uOt+rCBmkIAAAAHNCR9ZktJbcUAAAAKEn+qFMHsWLiH8IZhif/QDbWvgk</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqR6086GV9ke28XkpleS2ygAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD7isUcFJNj1JMTWCvRpJsMAAAAAASAAACgAAAAEAAAAG38Py+yzXWMDnTQAZQJOkcIAAAA2RwMbgXmSK8UAAAACX6NU+9tV6DhjkNXsrr+z4kPP1o</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -96,6 +96,7 @@
       DTS:refId="Package\Criação da Dimensão Cliente"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
+      DTS:Disabled="True"
       DTS:DTSID="{75C1770A-9C3A-47A5-BAE9-48E941B244BD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3665,11 +3666,11 @@ SELECT'003' AS CODIGO, 'Fábrica Céara' AS DESCRITOR</property>
         <NodeLayout
           Size="215,43"
           Id="Package\Criação da Dimensão Cliente"
-          TopLeft="112,163" />
+          TopLeft="54,127" />
         <NodeLayout
           Size="215,42"
           Id="Package\Criação da Dimensão Fábrica"
-          TopLeft="119.401709401709,92.3076923076923" />
+          TopLeft="55.401709401709,62.3076923076923" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4088,6 +4089,98 @@ SELECT'003' AS CODIGO, 'Fábrica Céara' AS DESCRITOR</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Criação da Dimensão Cliente\Dimensão de Alteração Lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{B166D60C-A362-4EAE-A1DE-C27235088A92}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Cliente]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Cidade]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Cidade&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Cliente]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Cliente&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Estado]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Estado&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Regiao]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Regiao&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Segmento]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Segmento&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Cidade]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Cidade&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Cliente]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Cliente&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Estado]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Estado&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Regiao]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Regiao&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Segmento]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Segmento&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Inserir Destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Criação da Dimensão Fábrica">
     <LayoutInfo>
@@ -4309,98 +4402,6 @@ SELECT'003' AS CODIGO, 'Fábrica Céara' AS DESCRITOR</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Criação da Dimensão Cliente\Dimensão de Alteração Lenta">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{B166D60C-A362-4EAE-A1DE-C27235088A92}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[Dim_Cliente]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Cidade]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Cod_Cidade&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Cliente]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Cod_Cliente&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Estado]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Cod_Estado&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Regiao]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Cod_Regiao&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Cod_Segmento]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Cod_Segmento&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Cidade]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Desc_Cidade&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Cliente]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Desc_Cliente&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Estado]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Desc_Estado&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Regiao]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Desc_Regiao&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão Unicode.Saídas[Saída de Conversão de Dados].Colunas[Desc_Segmento]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Desc_Segmento&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Inserir Destino&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn /&gt;
-  &lt;EndDateColumn /&gt;
-  &lt;DateVariable /&gt;
-  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
