@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatawarehouseSucos", "Dataw
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CargaDatawarehouse", "CargaDatawarehouse\CargaDatawarehouse.dtproj", "{577811C0-968D-4F7C-8225-AFB3331432CD}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "OLPA", "OLPA\OLPA.dwproj", "{422E34CB-A975-412D-A321-91E037C51E92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,15 @@ Global
 		{577811C0-968D-4F7C-8225-AFB3331432CD}.Development|Any CPU.Build.0 = Development
 		{577811C0-968D-4F7C-8225-AFB3331432CD}.Release|Any CPU.ActiveCfg = Development
 		{577811C0-968D-4F7C-8225-AFB3331432CD}.Release|Any CPU.Build.0 = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Debug|Any CPU.ActiveCfg = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Debug|Any CPU.Build.0 = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Debug|Any CPU.Deploy.0 = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Development|Any CPU.ActiveCfg = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Development|Any CPU.Build.0 = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Development|Any CPU.Deploy.0 = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Release|Any CPU.ActiveCfg = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Release|Any CPU.Build.0 = Development
+		{422E34CB-A975-412D-A321-91E037C51E92}.Release|Any CPU.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
