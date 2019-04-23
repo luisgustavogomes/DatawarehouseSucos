@@ -6,10 +6,38 @@
     <Name>OLPA.database</Name>
     <FullPath>OLPA.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>VENDAS.cube</Name>
+      <FullPath>VENDAS.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>VENDAS.partitions</Name>
+          <FullPath>VENDAS.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Fábrica.dim</Name>
       <FullPath>Fábrica.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Cliente.dim</Name>
+      <FullPath>Cliente.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Produto.dim</Name>
+      <FullPath>Produto.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Organizacional.dim</Name>
+      <FullPath>Organizacional.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Tempo.dim</Name>
+      <FullPath>Tempo.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
