@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CargaDimensoes"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{E415BAFA-1276-4B32-93D1-5B22D0D25507}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{2A446822-8AE6-4367-88C9-AD578A712699}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -164,7 +164,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqR6086GV9ke28XkpleS2ygAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADxp6IvzbP7Qfj/xzAgnEXNAAAAAASAAACgAAAAEAAAAN/Q6nITFegXEwYpbmN7u/oIAAAAEI1uKklim00UAAAA6Lsd03co2Q7vyqlWv+XNKP8G8Mg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIvAHGIfz7Eepv/JAW5slgQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAC5yzPLOZGCwXGiYSK7rB+AAAAAASAAACgAAAAEAAAAGQELldFyNeAArC8J50BmQMIAAAATKgppdbF6HgUAAAASb5c4NLVOxJ6LZGt6G0Xpa+cdgc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -177,7 +177,7 @@
       DTS:ObjectName="Ano_Final">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">2019</DTS:Property>
+        DTS:Name="ParameterValue">2014</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -186,7 +186,7 @@
       DTS:ObjectName="Ano_Inicial">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">2012</DTS:Property>
+        DTS:Name="ParameterValue">2014</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -18985,9 +18985,7 @@ SELECT * FROM @DIMDATE order by Cod_Dia</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

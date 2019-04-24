@@ -1,0 +1,105 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e5e744fb-6d12-437f-95c3-8a7545fb9336" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>PRESIDENCIA</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fato 001</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a44ebbcb-5a49-45ee-a01e-b1490aa2bc72">
+          <ID>Fato 001</ID>
+          <Name>Fato 001</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="644388a2-f346-43cf-942c-55b842c6c057">
+            <DataSourceViewID>DW SUCOS</DataSourceViewID>
+            <TableID>dbo_Fato_001</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato 002</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="fadeb88f-7515-4959-9b71-2501cf132db8">
+          <ID>Fato 002</ID>
+          <Name>Fato 002</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c47db214-35fc-4708-af3c-7a507c796cc3">
+            <DataSourceViewID>DW SUCOS</DataSourceViewID>
+            <TableID>dbo_Fato_002</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato 003</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6c23e03e-ba65-4435-95ac-cfeb5b05a14e">
+          <ID>Fato 003</ID>
+          <Name>Fato 003</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="39446e47-b61b-46d2-9932-82b1ddeb1f54">
+            <DataSourceViewID>DW SUCOS</DataSourceViewID>
+            <TableID>dbo_Fato_003</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato 004</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="552ab946-2186-40c0-bf74-6c5371618ca3">
+          <ID>Fato 004</ID>
+          <Name>Fato 004</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="da91285e-8de9-42f8-89a5-90eec909f173">
+            <DataSourceViewID>DW SUCOS</DataSourceViewID>
+            <TableID>dbo_Fato_004</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato 005</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="3aeaaa7b-d78a-46b3-a009-1a774d3d09b3">
+          <ID>Fato 005</ID>
+          <Name>Fato 005</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="200dd270-fa7a-4774-956b-006f76362975">
+            <DataSourceViewID>DW SUCOS</DataSourceViewID>
+            <TableID>dbo_Fato_005</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
