@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CargaDimensoes"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{2A446822-8AE6-4367-88C9-AD578A712699}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{BA9856FE-A538-40A5-9B33-9D359E75E72B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -164,7 +164,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIvAHGIfz7Eepv/JAW5slgQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAC5yzPLOZGCwXGiYSK7rB+AAAAAASAAACgAAAAEAAAAGQELldFyNeAArC8J50BmQMIAAAATKgppdbF6HgUAAAASb5c4NLVOxJ6LZGt6G0Xpa+cdgc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIvAHGIfz7Eepv/JAW5slgQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACLDIDMyV1ETrWsL1ir2Ec+AAAAAASAAACgAAAAEAAAAK2qeS+C+lbWi8ReedelTKsIAAAAhajO12NIQGIUAAAAgEno612jF5BGEP3XL8qMDgTkO7U</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -6217,6 +6217,7 @@
       DTS:refId="Package\Criação da Dimensão Fábrica"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Step by Step"
+      DTS:Disabled="True"
       DTS:DTSID="{42AA54DE-9250-43FD-AFA8-861EBD839FA7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
