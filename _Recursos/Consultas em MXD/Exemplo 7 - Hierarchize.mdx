@@ -1,0 +1,24 @@
+SELECT 
+	({
+		[Cliente].[Estado].&[São Paulo],
+		[Cliente].[Estado].&[Goiais],
+		[Cliente].[Estado].&[Paraná],
+		[Cliente].[Estado].&[Bahia]
+	}) ON ROWS ,
+	({
+		[Tempo].[Semestre e Ano].Members
+	}) ON COLUMNS
+FROM [COMPLETO]
+
+/*Order da hierárquica*/
+SELECT hierarchize
+	({
+		[Cliente].[Estado].&[São Paulo],
+		[Cliente].[Estado].&[Goiais],
+		[Cliente].[Estado].&[Paraná],
+		[Cliente].[Estado].&[Bahia]
+	}) ON ROWS ,
+	({
+		[Tempo].[Semestre e Ano].Members
+	}) ON COLUMNS
+FROM [COMPLETO]

@@ -1,0 +1,12 @@
+SELECT
+	({
+		[Tempo].[Ano].&[2013]
+		,[Tempo].[Ano].&[2014]
+	 }) ON ROWS,
+	({
+		[Measures].[Faturamento Líquido]
+		,[Measures].[Margem]
+	}) ON COLUMNS
+
+FROM COMPLETO 
+WHERE [Fábrica].[Fábrica].&[Fábrica São Paulo]

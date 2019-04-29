@@ -1,0 +1,41 @@
+SELECT 
+	({
+		[Cliente].[Estado].&[Rio de Janeiro],
+		[Cliente].[Estado].&[Minas Gerais]
+	}) ON ROWS ,
+
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013],
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[02-2013],
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[03-2013]
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Measures].[Faturamento Líquido];
+
+
+SELECT 
+	({
+		[Cliente].[Estado].&[Rio de Janeiro],
+		[Cliente].[Estado].&[Minas Gerais]
+	}) ON ROWS ,
+
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[03-2013]
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Measures].[Faturamento Líquido]
+
+
+SELECT 
+	({
+		[Cliente].[Estado].&[Rio de Janeiro],
+		[Cliente].[Estado].&[Minas Gerais]
+	}) ON COLUMNS ,
+
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[03-2013]
+	}) ON ROWS
+FROM [COMPLETO]
+WHERE [Measures].[Faturamento Líquido]

@@ -1,0 +1,8 @@
+SELECT 
+	({
+		 [Cliente].[Estado].Members
+	}) ON COLUMNS,
+	({
+		 [Measures].Members
+	}) ON ROWS
+FROM [VENDAS]

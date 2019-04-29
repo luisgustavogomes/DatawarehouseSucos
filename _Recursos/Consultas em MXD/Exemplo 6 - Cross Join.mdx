@@ -1,0 +1,56 @@
+SELECT 
+	Non Empty
+	(
+		{[Measures].[Faturamento Líquido], [Measures].[Margem]},{[Cliente].[Estado].&[São Paulo],[Cliente].[Estado].&[Rio de Janeiro]}
+	) ON ROWS ,
+
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:[Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013]
+	}) ON COLUMNS
+FROM [COMPLETO]
+
+
+SELECT 
+	Non Empty
+	( 
+	CROSSJOIN(
+			{[Measures].[Faturamento Líquido], [Measures].[Margem]},
+			{[Cliente].[Estado].&[São Paulo],[Cliente].[Estado].&[Rio de Janeiro]} )
+	) ON ROWS ,
+
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:[Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013]
+	}) ON COLUMNS
+FROM [COMPLETO]
+
+
+SELECT 
+	Non Empty
+	( 
+	CROSSJOIN(
+			{[Produto].[Marca].&[Frescor do Verão],
+			 [Produto].[Marca].&[Pedaços de Frutas]},
+			 (CROSSJOIN(
+			 		{[Measures].[Faturamento Líquido], [Measures].[Margem]},
+			 		{[Cliente].[Estado].&[São Paulo],[Cliente].[Estado].&[Rio de Janeiro]} ) ) )
+	) ON ROWS ,
+
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:[Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013]
+	}) ON COLUMNS
+FROM [COMPLETO]
+
+/*Exemplo sem o Non Empty*/
+SELECT 
+	( 
+	CROSSJOIN(
+			{[Produto].[Produto].Members},
+			 (CROSSJOIN(
+			 		{[Measures].[Faturamento Líquido], [Measures].[Margem]},
+			 		{[Cliente].[Cliente].Members} ) ) )
+	) ON ROWS ,
+
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:[Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013]
+	}) ON COLUMNS
+FROM [COMPLETO]
