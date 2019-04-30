@@ -1,0 +1,89 @@
+
+
+SELECT 
+	({
+		[Produto].[Categoria].Members
+	})  ON ROWS ,
+	({
+		[Measures].[Faturamento] ,[Measures].[Faturamento Líquido]
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Tempo].[Ano].&[2014]
+
+
+WITH
+MEMBER [Measures].[Novo Faturamento Líquido] AS 
+'[Measures].[Faturamento]-[Measures].[Frete Rateio]-[Measures].[Imposto]'
+SELECT 
+	({
+		[Produto].[Categoria].Members
+	})  ON ROWS ,
+	({
+		[Measures].[Faturamento] ,[Measures].[Faturamento Líquido], [Measures].[Novo Faturamento Líquido]
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Tempo].[Ano].&[2014]
+
+
+
+WITH
+MEMBER [Measures].[Novo Faturamento Líquido] AS 
+'[Measures].[Faturamento]-[Measures].[Frete Rateio]-[Measures].[Imposto]'
+MEMBER [Measures].[Variação Faturamento] AS 
+'[Measures].[Novo Faturamento Líquido]/[Measures].[Faturamento]'		
+SELECT 
+	({
+		[Produto].[Categoria].Members
+	})  ON ROWS ,
+	({
+		[Measures].[Faturamento] ,[Measures].[Faturamento Líquido], [Measures].[Novo Faturamento Líquido], [Measures].[Variação Faturamento] 
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Tempo].[Ano].&[2014]
+
+
+WITH
+MEMBER [Measures].[Novo Faturamento Líquido] AS 
+'[Measures].[Faturamento]-[Measures].[Frete Rateio]-[Measures].[Imposto]', FORMAT_STRING = '#,###.##'
+MEMBER [Measures].[Variação Faturamento] AS 
+'[Measures].[Novo Faturamento Líquido]/[Measures].[Faturamento]'	, FORMAT_STRING = '#,###.## %'	
+SELECT 
+	({
+		[Produto].[Categoria].Members
+	})  ON ROWS ,
+	({
+		[Measures].[Faturamento] ,[Measures].[Faturamento Líquido], [Measures].[Novo Faturamento Líquido], [Measures].[Variação Faturamento] 
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Tempo].[Ano].&[2014]
+
+
+
+SELECT 
+	({
+		[Produto].[Marca].Members
+	})  ON ROWS ,
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013],
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[02-2013]
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Measures].[Faturamento]
+
+
+/*Criação de membro cálculado na dimensão*/
+WITH
+MEMBER [Tempo].[Mês e Ano].[Var Fev Jan] AS 
+'(1 - ([Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013] / [Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[02-2013] ))', FORMAT_STRING ="##,###.00 %"
+
+SELECT 
+	({
+		[Produto].[Marca].Members
+	})  ON ROWS ,
+	({
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013],
+		[Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[02-2013],
+		[Tempo].[Mês e Ano].[Var Fev Jan]
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Measures].[Faturamento]

@@ -1,0 +1,25 @@
+SELECT 
+	({
+		 [Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:
+		 [Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013]
+	})  ON ROWS ,
+	({
+		 [Measures].[Margem]
+	}) ON COLUMNS
+FROM [COMPLETO]
+
+WITH
+MEMBER [Tempo].[Mês e Ano].[Soma] AS
+'SUM([Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:
+ [Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013])'
+
+SELECT 
+	({
+		 [Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:
+		 [Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013],
+		 [Tempo].[Mês e Ano].[Soma]
+	})  ON ROWS ,
+	({
+		 [Measures].[Margem]
+	}) ON COLUMNS
+FROM [COMPLETO]

@@ -1,0 +1,56 @@
+SELECT 
+	({
+		[Produto].[Hierarquia de Produtos].[Nível Marca].Members
+	})  ON ROWS ,
+	({
+		[Measures].[Faturamento]
+	}) ON COLUMNS
+FROM [COMPLETO]
+WHERE [Tempo].[Ano].&[2014]
+
+SELECT 
+	FILTER(
+	({
+		[Produto].[Hierarquia de Produtos].[Nível Marca].Members
+	}), [Measures].[Faturamento] > 10000000) ON ROWS ,
+
+	({
+		[Measures].[Faturamento]
+	}) ON COLUMNS
+
+FROM [COMPLETO]
+WHERE [Tempo].[Ano].&[2014]
+
+SELECT 
+	FILTER(	
+		ORDER ( 
+			({[Produto].[Hierarquia de Produtos].[Nível Marca].Members}), 
+			[Measures].[Faturamento] , 
+			BDESC ) ,
+		[Measures].[Faturamento] > 100000 ) 
+	ON ROWS ,
+	({
+		[Measures].[Faturamento]
+	}) ON COLUMNS
+
+FROM [COMPLETO]
+WHERE [Tempo].[Ano].&[2014]
+
+
+SELECT 
+	FILTER(	
+		ORDER ( 
+			CROSSJOIN (
+				({[Tempo].[Ano].&[2014]}),
+				({[Produto].[Hierarquia de Produtos].[Nível Marca].Members})
+				),
+			[Measures].[Faturamento] , 
+			BDESC ) ,
+		[Measures].[Faturamento] > 100000 ) 
+	ON ROWS ,
+	({
+		[Measures].[Faturamento]
+	}) ON COLUMNS
+
+FROM [COMPLETO]
+

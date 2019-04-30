@@ -1,0 +1,49 @@
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	}) ON ROWS,
+	({
+		[Measures].[Faturamento]
+	}) ON COLUMNS
+FROM [COMPLETO]
+
+
+WITH 
+MEMBER [Measures].[Variação Faturamento] AS
+'[Measures].[Faturamento] - ([Measures].[Faturamento], [Tempo].[Hierarquia do Mês e Ano].Currentmember.PrevMember)', FORMAT_STRING = '#,###.00'
+
+SELECT NON EMPTY
+	
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	}) 
+	ON ROWS,
+	({
+		[Measures].[Faturamento]
+		,[Measures].[Variação Faturamento]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+
+
+WITH 
+MEMBER [Measures].[Variação Faturamento] AS
+'[Measures].[Faturamento] - ([Measures].[Faturamento], [Tempo].[Hierarquia do mês].[Nível Mês].Currentmember.PrevMember)', FORMAT_STRING = '#,###.00'
+MEMBER [Measures].[Variação Faturamento %] AS
+'(([Measures].[Faturamento],[Tempo].[Hierarquia do mês].[Nível Mês].Currentmember)/
+  ([Measures].[Faturamento],[Tempo].[Hierarquia do mês].[Nível Mês].Currentmember.PrevMember))-1', FORMAT_STRING = '#,###.00 %'
+
+
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do mês].[Nível Mês].Members
+	})
+	ON ROWS,
+	({
+		[Measures].[Faturamento]
+		,[Measures].[Variação Faturamento]
+		,[Measures].[Variação Faturamento %] 
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+where [Tempo].[Código Do Dia]
