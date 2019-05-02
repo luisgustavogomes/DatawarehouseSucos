@@ -1,0 +1,88 @@
+WITH
+MEMBER [Measures].[Faturamento abertura]
+AS
+'([Measures].[Faturamento], ParallelPeriod([Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano], 2, [Tempo].[Hierarquia do Mês e Ano].Currentmember))' 
+,FORMAT_STRING = '#,###.00'
+
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	})
+	ON ROWS,
+	({
+		[Measures].[Faturamento]
+		,[Measures].[Faturamento abertura]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+
+
+WITH
+MEMBER [Measures].[Faturamento abertura]
+AS
+'([Measures].[Faturamento], ParallelPeriod([Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano], -12, [Tempo].[Hierarquia do Mês e Ano].Currentmember))' 
+,FORMAT_STRING = '#,###.00'
+
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	})
+	ON ROWS,
+	({
+		[Measures].[Faturamento]
+		,[Measures].[Faturamento abertura]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+
+
+
+
+WITH
+MEMBER [Measures].[Faturamento ano]
+AS
+'([Measures].[Faturamento], ParallelPeriod([Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano], 12, [Tempo].[Hierarquia do Mês e Ano].Currentmember))' 
+,FORMAT_STRING = '#,###.00'
+
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	})
+	ON ROWS,
+	({
+		[Measures].[Faturamento]
+		,[Measures].[Faturamento ano]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+
+
+WITH
+MEMBER [Measures].[Variação Faturamento ano]
+AS
+'([Measures].[Faturamento])/
+ ([Measures].[Faturamento], ParallelPeriod([Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano], 12, [Tempo].[Hierarquia do Mês e Ano].Currentmember))-1' 
+,FORMAT_STRING = '#,###.00 %'
+
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	})
+	ON ROWS,
+	({
+		[Measures].[Faturamento]
+		,[Measures].[Variação Faturamento ano]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+
+
+WITH MEMBER [Measures].[Variação Faturamento]
+AS
+'([Measures].[Faturamento]) - 
+([Measures].[Faturamento], ParallelPeriod([Tempo].[Hierarquia do Mês e Ano].[Ano], 2, 
+[Tempo].[Hierarquia do Mês e Ano].Currentmember)) ',
+FORMAT_STRING = "##,###.00"
+SELECT ({[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013],[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2015] }) On Rows,
+({[Measures].[Faturamento], [Measures].[Variação Faturamento]}) On Columns
+FROM [COMPLETO]

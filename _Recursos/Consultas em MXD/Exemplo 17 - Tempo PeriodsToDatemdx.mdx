@@ -1,0 +1,56 @@
+WITH
+MEMBER [Measures].[Faturamento YTD]
+AS
+'SUM(
+	PeriodsToDate([Tempo].[Hierarquia do Mês e Ano].[Ano], [Tempo].[Hierarquia do Mês e Ano].Currentmember),
+	[Measures].[Faturamento])'
+,FORMAT_STRING = '#,###.00'
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	})
+	ON ROWS,
+	({
+		[Measures].[Faturamento],
+		[Measures].[Faturamento YTD]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+
+
+WITH
+MEMBER [Measures].[Faturamento YTD]
+AS
+'SUM(
+	PeriodsToDate([Tempo].[Hierarquia do Mês e Ano].[Ano], [Tempo].[Hierarquia do Mês e Ano].Currentmember),
+	[Measures].[Faturamento])'
+,FORMAT_STRING = '#,###.00'
+
+MEMBER [Measures].[Faturamento QTD]
+AS
+'SUM(
+	PeriodsToDate([Tempo].[Hierarquia do Mês e Ano].[Nível Trimestre e Ano], [Tempo].[Hierarquia do Mês e Ano].Currentmember),
+	[Measures].[Faturamento])'
+,FORMAT_STRING = '#,###.00'
+
+SELECT NON EMPTY
+	({
+		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].Members
+	})
+	ON ROWS,
+	({
+		[Measures].[Faturamento]
+		,[Measures].[Faturamento YTD]
+		,[Measures].[Faturamento QTD]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+
+
+WITH MEMBER
+[Measures].[Faturamento Trimestre no Ano] AS
+'Sum(PeriodsToDate([Tempo].[Hierarquia do Mês e Ano].[Ano], [Tempo].[Hierarquia do Mês e Ano].Currentmember),[Measures].[Faturamento])',
+FORMAT_STRING = "##,###.00"
+SELECT NON EMPTY ({[Tempo].[Hierarquia do Mês e Ano].[Nível Trimestre e Ano].Members})  ON ROWS,
+({[Measures].[Faturamento], [Measures].[Faturamento Trimestre no Ano]}) ON COLUMNS
+FROM [COMPLETO]

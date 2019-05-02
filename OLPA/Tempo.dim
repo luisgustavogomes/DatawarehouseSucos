@@ -1,8 +1,8 @@
 ﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="57e1dcaa-7477-4672-bc30-b816eaf65161" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Tempo</ID>
   <Name>Tempo</Name>
-  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
@@ -73,7 +73,6 @@
             <Shape Id="Código Do Dia" Expanded="true">
               <Attributes>
                 <Attribute Id="Código Do Dia" />
-                <Attribute Id="Ano" />
                 <Attribute Id="Código Da Semana" />
                 <Attribute Id="Código Do Mês" />
                 <Attribute Id="Código Do Mês e Ano" />
@@ -82,23 +81,59 @@
                 <Attribute Id="Código Do Trimestre" />
                 <Attribute Id="Código Do Trimestre e Ano" />
                 <Attribute Id="Data" />
-                <Attribute Id="Mês" />
-                <Attribute Id="Mês e Ano" />
                 <Attribute Id="Nome Do Dia Da Semana" />
-                <Attribute Id="Semestre" />
-                <Attribute Id="Semestre e Ano" />
                 <Attribute Id="Tipo Do Dia" />
-                <Attribute Id="Trimestre" />
-                <Attribute Id="Trimestre e Ano" />
               </Attributes>
               <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Ano" Expanded="false">
+              <Attributes>
+                <Attribute Id="Ano" />
+              </Attributes>
+              <Position x="253" y="20" />
+            </Shape>
+            <Shape Id="Semestre e Ano" Expanded="false">
+              <Attributes>
+                <Attribute Id="Semestre e Ano" />
+              </Attributes>
+              <Position x="253" y="68" />
+            </Shape>
+            <Shape Id="Semestre" Expanded="false">
+              <Attributes>
+                <Attribute Id="Semestre" />
+              </Attributes>
+              <Position x="253" y="116" />
+            </Shape>
+            <Shape Id="Trimestre e Ano" Expanded="false">
+              <Attributes>
+                <Attribute Id="Trimestre e Ano" />
+              </Attributes>
+              <Position x="253" y="164" />
+            </Shape>
+            <Shape Id="Trimestre" Expanded="false">
+              <Attributes>
+                <Attribute Id="Trimestre" />
+              </Attributes>
+              <Position x="253" y="212" />
+            </Shape>
+            <Shape Id="Mês e Ano" Expanded="false">
+              <Attributes>
+                <Attribute Id="Mês e Ano" />
+              </Attributes>
+              <Position x="253" y="260" />
+            </Shape>
+            <Shape Id="Mês" Expanded="false">
+              <Attributes>
+                <Attribute Id="Mês" />
+              </Attributes>
+              <Position x="253" y="308" />
             </Shape>
           </Shapes>
         </DiagramLayout>
       </Value>
     </Annotation>
   </Annotations>
-  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="0247673b-340b-459a-a3b0-12eb5a0e57e8">
     <DataSourceViewID>DW SUCOS</DataSourceViewID>
@@ -303,7 +338,7 @@
       <NameColumn dwd:design-time-name="e4be6767-3cfc-4699-a56e-9b546aca21ed">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="8a66efd3-db05-4312-add5-34c2ca598ebc">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0a1ed347-e85a-43de-8f81-369b047cebf0">
           <TableID>dbo_Dim_Tempo</TableID>
           <ColumnID>Nome_Mes</ColumnID>
         </Source>
@@ -369,7 +404,7 @@
       <NameColumn dwd:design-time-name="4d9b5d88-6644-467e-a17a-11eb3e5801c8">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="e658471b-347a-4f80-b0c4-8b4ada6180b9">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7841047d-8d1a-49aa-89b2-b16f2a680402">
           <TableID>dbo_Dim_Tempo</TableID>
           <ColumnID>Nome_Mes_Ano</ColumnID>
         </Source>
@@ -425,7 +460,7 @@
       <NameColumn dwd:design-time-name="8aece82e-839c-402b-8a2c-b731c6d9250d">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="8e5cc7b0-b1e7-48ee-9aea-e9871f4d86c6">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9babff77-999f-4efc-814a-88bbee4eb2a8">
           <TableID>dbo_Dim_Tempo</TableID>
           <ColumnID>Nome_Trimestre</ColumnID>
         </Source>
@@ -479,15 +514,39 @@
       <ID>Trimestre e Ano</ID>
       <Name>Trimestre e Ano</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7761b74c-ae28-4a57-96f2-8e3d76c3f12e">
+        <KeyColumn dwd:design-time-name="f6d1bbde-a55c-4b97-b385-c40e80350f93">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="46fcbe51-ea1a-4b99-b0fd-092bad83fa3e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1ed850a6-9bfb-47c4-a612-1090d76964f4">
             <TableID>dbo_Dim_Tempo</TableID>
-            <ColumnID>Nome_Trimestre_Ano</ColumnID>
+            <ColumnID>Ano</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="0380481a-52c1-46f4-aa35-784cbf6b37d0">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8d93df06-b658-49ae-bf75-8601734f188d">
+            <TableID>dbo_Dim_Tempo</TableID>
+            <ColumnID>Cod_Semestre_Ano</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="82b1058c-a954-4ca4-bc1f-1241fb84eae3">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f9e75c8b-b978-42fd-aa6e-af477aecedb5">
+            <TableID>dbo_Dim_Tempo</TableID>
+            <ColumnID>Cod_Trimestre_Ano</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn dwd:design-time-name="7748569a-e10a-42a0-a29c-68b35d8700f0">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5ea9a054-12ec-4fe1-8482-36878923a9a3">
+          <TableID>dbo_Dim_Tempo</TableID>
+          <ColumnID>Nome_Trimestre_Ano</ColumnID>
+        </Source>
+      </NameColumn>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
