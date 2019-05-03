@@ -1,0 +1,90 @@
+WITH 
+MEMBER [Measures].[Faturamento de Vendas]
+AS
+'[MEASURES].[FATURAMENTO]',
+FORMAT_STRING = "#,###.00"
+
+SELECT NON EMPTY
+	({
+		ORDER(
+			[CLIENTE].[HIERARQUIA GEOGRÁFICA].[NÍVEL CIDADE].MEMBERS
+			, [Faturamento de Vendas]
+			, BDESC)
+	})
+	ON ROWS,
+	({
+		[TEMPO].[HIERARQUIA DO MÊS E ANO].[ANO].&[2014]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+WHERE [Faturamento de Vendas]
+
+
+//
+//WITH 
+//
+//MEMBER [Measures].[% Taxa Variação] AS
+//'[Measures].[Faturamento] / ([Measures].[Faturamento], [Tempo].[Hierarquia do Mês e Ano].Currentmember.parent)', 
+//FORMAT_STRING = '#,###.00 %'
+//
+//MEMBER [Measures].[Faturamento de Vendas]
+//AS
+//'[MEASURES].[FATURAMENTO]',
+//FORMAT_STRING = "#,###.00"
+//
+//SELECT NON EMPTY
+//	({
+//		[Tempo].[Hierarquia do Mês e Ano].[Nível Mês e Ano].members
+//	}) ON ROWS,
+//	({
+//		[Measures].[Faturamento de Vendas]
+//		, [Measures].[% Taxa Variação]
+//	}) ON COLUMNS
+//FROM [COMPLETO]
+//
+//
+
+
+
+WITH 
+MEMBER [Measures].[Faturamento de Vendas]
+AS
+'[MEASURES].[FATURAMENTO]',
+FORMAT_STRING = "#,###.00"
+
+SELECT NON EMPTY
+	({
+		ORDER( 
+			TOPCOUNT([CLIENTE].[HIERARQUIA GEOGRÁFICA].[NÍVEL CIDADE].MEMBERS, 3,[Faturamento de Vendas])
+			, [Faturamento de Vendas]
+			, BDESC)
+	})
+	ON ROWS,
+	({
+		[TEMPO].[HIERARQUIA DO MÊS E ANO].[ANO].&[2014]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+WHERE [Faturamento de Vendas]
+
+
+WITH 
+MEMBER [Measures].[Faturamento de Vendas]
+AS
+'[MEASURES].[FATURAMENTO]',
+FORMAT_STRING = "#,###.00"
+
+SELECT NON EMPTY
+	({
+		ORDER( 
+			BOTTOMCOUNT([CLIENTE].[HIERARQUIA GEOGRÁFICA].[NÍVEL CIDADE].MEMBERS, 4,[Faturamento de Vendas])
+			, [Faturamento de Vendas]
+			, BDESC)
+	})
+	ON ROWS,
+	({
+		[TEMPO].[HIERARQUIA DO MÊS E ANO].[ANO].&[2014]
+	}) 
+	ON COLUMNS
+FROM [COMPLETO]
+WHERE [Faturamento de Vendas]

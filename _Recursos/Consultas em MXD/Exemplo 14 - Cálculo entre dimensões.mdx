@@ -1,6 +1,6 @@
 SELECT NON EMPTY
 	({
-		[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013].&[Primeiro Trimestre 2013].Children
+		[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013].Children
 	}) ON ROWS,
 	({
 		[Measures].[Faturamento]
@@ -8,16 +8,21 @@ SELECT NON EMPTY
 FROM [COMPLETO]
 
 
-WITH MEMBER [Measures].[% Taxa Variação] AS
-'[Measures].[Faturamento] / ([Measures].[Faturamento], [Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013].&[Primeiro Trimestre 2013])', FORMAT_STRING = '#,###.## %'
-
+WITH 
+MEMBER [Measures].[% Taxa Variação] 
+AS
+'[Measures].[Faturamento] / ([Measures].[Faturamento], [Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013])', FORMAT_STRING = '#,###.## %'
+MEMBER [Measures].[Faturamento de Vendas]
+AS
+'[MEASURES].[FATURAMENTO]',
+FORMAT_STRING = "#,###.00"
 SELECT NON EMPTY
 	({
-		[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013].&[Primeiro Trimestre 2013].Children
+		[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013].Children
 	}) ON ROWS,
 	({
-		[Measures].[Faturamento],
-		[Measures].[% Taxa Variação]
+		[Measures].[Faturamento de Vendas]
+		,[Measures].[% Taxa Variação]
 	}) ON COLUMNS
 FROM [COMPLETO]
 
@@ -27,11 +32,11 @@ WITH MEMBER [Measures].[% Taxa Variação] AS
 
 SELECT NON EMPTY
 	({
-		[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013].&[Primeiro Trimestre 2013].Children
+		[Tempo].[Hierarquia do Mês e Ano].[Ano].&[2013].&[Primeiro Semestre 2013].Children
 	}) ON ROWS,
 	({
-		[Measures].[Faturamento],
-		[Measures].[% Taxa Variação]
+		[Measures].[Faturamento]
+		//,[Measures].[% Taxa Variação]
 	}) ON COLUMNS
 FROM [COMPLETO]
 
