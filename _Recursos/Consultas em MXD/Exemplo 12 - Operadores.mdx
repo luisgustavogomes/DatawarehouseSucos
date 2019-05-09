@@ -9,9 +9,11 @@ SELECT
 FROM [COMPLETO]
 
 WITH
+MEMBER [MEASURES].[MARGEMF] AS
+'[Measures].[Margem]', FORMAT_STRING = "#,##0.00"
 MEMBER [Tempo].[Mês e Ano].[Soma] AS
 'SUM([Tempo].[Mês e Ano].&[2013]&[01-2013]&[01-2013]&[01-2013]:
- [Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013])'
+ [Tempo].[Mês e Ano].&[2013]&[01-2013]&[02-2013]&[06-2013])',FORMAT_STRING = "#,##0.00"
 
 SELECT 
 	({
@@ -20,6 +22,6 @@ SELECT
 		 [Tempo].[Mês e Ano].[Soma]
 	})  ON ROWS ,
 	({
-		 [Measures].[Margem]
+		  [MEASURES].[MARGEMF]
 	}) ON COLUMNS
 FROM [COMPLETO]

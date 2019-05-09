@@ -41,7 +41,7 @@ SELECT NON EMPTY
 FROM [COMPLETO]
 
 WITH MEMBER [Measures].[% Taxa Variação] AS
-'[Measures].[Faturamento] / ([Measures].[Faturamento], [Tempo].[Hierarquia do Mês e Ano].Currentmember.Parent)', FORMAT_STRING = '#,###.## %'
+'[Measures].[Faturamento] / ([Measures].[Faturamento], [Tempo].[Hierarquia do Mês e Ano].Currentmember.Parent)', FORMAT_STRING = 'Percent'
 
 SELECT NON EMPTY
 	({
